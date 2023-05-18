@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Metadata-->
+    <title>Generador de Contraseñas</title>
+</head>
+<body>
+    <!--Encabezado de la página-->    
+    <h1>Generador de Contraseñas</h1>
+
+    <!--Formulario para elegir características de la contraseña-->
+    <form method="POST" action= "/generar/" >
+        {% csrf_token %}
+        <label for="longitud">Longitud:</label>
+        <input type="number" name="longitud" required>
+        <br><br>
+        <label>Tipo de caracteres:</label>
+        <br>
+        <input type="checkbox" name="caracteres" value="letras"> Letras
+        <input type="checkbox" name="caracteres" value="numeros"> Números
+        <input type="checkbox" name="caracteres" value="simbolos"> Símbolos
+        <br><br>
+        <input type="submit" value="Generar Contraseña">
+    </form>
+    
+</body>
+</html>
